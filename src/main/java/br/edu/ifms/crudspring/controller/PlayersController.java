@@ -28,7 +28,7 @@ public class PlayersController {
     @PostMapping("/")
     public String save(@ModelAttribute("student") Players players) {
         service.save(players);
-        return "redirect:/student/";
+        return "redirect:/player/";
     }
 
   
