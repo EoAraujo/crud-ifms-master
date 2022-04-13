@@ -33,16 +33,16 @@ public class ProfessorController {
     public String locAll(Model model) {
         List<Professor> professores = professorService.getProfessor();
         model.addAttribute("professores", professores);
-        return "index";
+        return "index_prof";
     }
 
-    @GetMapping("/cadastrar")
+    @GetMapping("/cadastrar_prof")
     public String newProfessor(Model model) {
         model.addAttribute("professor", new Professor());
-        return "cadastrar";
+        return "cadastrar_prof";
     }
 
-    @GetMapping("/remove/{id}")
+    @GetMapping("/remove_prof/{id}")
     public String removerProfessor(@PathVariable("id") UUID id) {
 
         log.info("id = " + id);
@@ -50,7 +50,7 @@ public class ProfessorController {
         return "redirect:/professor/";
     }
 
-    @GetMapping("/edit/{id}")
+    @GetMapping("/edit_prof/{id}")
     public String editProfessor(@PathVariable("id") UUID id, Model model) {
 
         log.info("id = editado", id);
@@ -61,7 +61,7 @@ public class ProfessorController {
         return "editProfessor";
     }
 
-    @PostMapping("/update/{id}")
+    @PostMapping("/update_prof/{id}")
     public String updateProfessor(@PathVariable("id") UUID id, @ModelAttribute Professor professor) {
         professorService.save(professor);
 
