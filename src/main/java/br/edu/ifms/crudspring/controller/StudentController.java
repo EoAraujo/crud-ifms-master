@@ -17,7 +17,7 @@ import br.edu.ifms.crudspring.services.StudentService;
 import lombok.extern.slf4j.Slf4j;
 
 @Controller
-@RequestMapping("/student") //o controller vai ser responsavel por receber as requisiçoes
+@RequestMapping("/student") //o  controller vai ser responsavel por receber as requisiçoes
 @Slf4j
 public class StudentController {
 
